@@ -1,0 +1,182 @@
+console.clear()
+
+//1...  ArrayFilter method in which we can filter array with the help of fun.. 
+
+
+arry=[10,20,30,40,50,230,650];
+
+console.log(arry);
+
+var arry2= arry.filter(clearage)
+
+function clearage(age){
+  
+  return age>=20;
+}
+
+console.log(arry2);
+
+
+//2.forEach()-- For arry index and values like for loop....help of fun.
+
+arry.forEach(function loop(value,index){
+  
+  console.log(index +"==>" + value);
+})
+
+
+
+
+console.clear()
+
+// #1...create object at time of use ....
+
+var Person= new Object();
+
+Person.frstname="Sonu";
+Person.lastname="Shamra"
+Person.age=25;
+
+
+console.log(Person);
+
+
+Person.class="Bca";
+
+console.log(Person);
+
+//  #2.. Arry in the objects How to use with for loop and print.... 
+var arry=[
+    {name:'sonu',age:23},
+    {name:'sharma',age:24},
+    {name:'rahul',age:50}
+ 
+]
+
+console.log(arry);
+
+for(var a=0; a<arry.length;a++){
+  
+  console.log(arry[a].name +"  ==>>"+arry[a].age);
+}
+
+//#3.. const Arry and objects how to use them only you can change value by prpties ...
+
+const b =[10,30,40];
+
+b[0]=40;
+
+console.log(b);
+
+//Similaly we use in the objects only change with prptes....
+
+/*const o={
+  name:"sonu",
+  age:34
+}
+
+o.name="Sharma"
+
+console.lgo(o);
+*/
+// #4. How to print object all prptis with For in loop...
+
+var object={
+    name:'sonu',
+    class:'bca',
+    age:24,
+    dream:"fullstack developer"
+}
+
+   for(var key in object){
+     console.log(key + "==> "+object[key]);
+   }
+
+
+
+
+
+
+// 3. Object method and properties how to use ...
+
+var object={
+   name:"Sonu",
+   lname:"Shamra",
+   age:22,
+   arry:[20,30,40,50],
+  
+  name1:function f(){
+  return "Hey i am sonu sharma";
+}
+  
+  ,
+  function2:function f2(){
+  return this.name+" "+this.lname;
+}
+,
+function3:function f(){
+  return this.arry;
+}
+
+  ,
+  living:{
+  city:"haryana",
+    state:"atlei",
+}
+  
+}
+
+console.log(object.name1());
+
+console.log(object);
+
+console.log(object.function2())
+
+console.log(object.function3())
+
+
+
+
+
+//How to print current date and time Function....
+ 
+
+function time(){
+   var d= new Date();
+   var hours= d.getHours();
+   var minuts= d.getMinutes();
+   var sec=d.getSeconds();
+   console.log(hours+":"+minuts+":"+sec);
+  
+}
+
+//var interval= setInterval(time,1000)
+
+
+
+*********************** Convert Object to Array of Objects **************'
+            
+                       ---  Values between objects comparing ---
+
+  const buildChartData = (data, caseType = "cases") => {
+    const chartData = [];   //create a array for store 
+    let lastDatePoint;      //for comparing the object with previrus
+   
+    for (let date in data.cases) {
+      if (lastDatePoint) {
+        const newDataPoint = {
+          x: date,
+          y: data[caseType][date] - lastDatePoint,
+        };
+        chartData.push(newDataPoint);
+      }
+      lastDatePoint = data[caseType][date];
+    }
+    console.log(chartData);
+    return chartData;
+  };
+
+
+
+
+

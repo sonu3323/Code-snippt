@@ -1,0 +1,25 @@
+             ********Div center ***********
+
+ position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);  
+
+              OR
+
+	 display: grid;
+	 place-items: center;		
+
+
+
+
+                   ************************
+
+
+********   For adjust the image form the css url in one line ********
+
+
+background: center / contain no-repeat url(" --")
+
+
+*******************

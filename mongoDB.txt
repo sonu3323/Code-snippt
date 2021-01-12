@@ -1,0 +1,20 @@
+"C:\Program Files\MongoDB\Server\4.2\bin\mongo.exe" 
+
+
+**************************************************
+
+Use the database of Firebase snippt code ==>
+
+import firebase from "firebase";
+
+const firebaseApp = firebase.initializeApp({
+   
+// here is the file of firebase config**
+
+});
+
+const db = firebaseApp.firestore();
+
+export { db };
+
+

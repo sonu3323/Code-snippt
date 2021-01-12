@@ -1,0 +1,107 @@
+                       *********  USECONTEXT API REACT ************
+
+                             we have to follow 4 steps.
+
+ 1. create a file for stateProvider => stateProvider.js
+
+                    in this file code : 
+----------------------------
+//Setup data layer
+//we need this to trcak the besket
+
+import React, { createContext, useContext, useReducer } from "react";
+
+//This is Data layer
+export const StateContext = createContext();
+
+//Build a Provider''
+export const StateProvider = ({ reducer, initialState, children }) => (
+  <StateContext.Provider value={useReducer(reducer, initialState)}>
+    {children}
+  </StateContext.Provider>
+);
+
+//This is how we use the state inside in our component
+
+export const useStateValue = () => useContext(StateContext);
+
+---------------------------------------     
+
+2. create a Reducer file => reducer.js
+
+         in which we create a initialState , and a reducer for actionDispatch
+
+
+------------------------------------------
+
+export const initialState = {
+  basket: ["sonu", "bread"],
+     initialState data *
+};
+
+const reducer = (state = initialState, action) => {
+  console.log(action);
+  console.log(state);
+  switch (action.type) {
+    case "TYPE1":
+      //logic for TYPE
+      return { change state };
+    case "TYPE2":
+      //logic for 
+      return { change state };
+      return {};
+    default:
+      return state;
+  }
+};
+
+export default reducer;
+
+
+----------------------------------------
+
+3. Now the data-layer goes in all the components then we use the provider to 
+   index.js file so all component use the state ****
+
+     ===>> import initialState , reducer, stateProvider **
+   ---------------------------------------
+
+
+   <StateProvider initialState={initialState} reducer={reducer}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </StateProvider>
+  </React.StrictMode>,
+
+
+
+--------------------------------------------
+
+
+4.Now just use the state and actoin 
+
+     1. use state only then => 
+         ===>> import useStateValue form "stateProvider"
+ 
+
+    --------------------------
+         const [state] = useStateValue(); //for only state use, 
+                                            destructure we can 
+               ex: [{key}]
+
+    // const [state , dispatch] = useStateValue();
+
+      2. for dispatch action ***
+
+          const [state , dispatch] = useStateValue();
+                 
+          **dispatch is a function which take object as 
+                 arguments of TYPE and PAYLOAD ** 
+               
+             ex:  dispatch({
+		   type: " TYPE" ,
+                   payload: data 
+                   })
+
+---------------------------------------

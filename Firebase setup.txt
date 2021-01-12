@@ -1,0 +1,20 @@
+                          *********FIREBASE SETUP************
+
+---------------------------------------
+
+
+import firebse from "firebase";
+
+const fireBaseApp = firebse.initializeApp({
+   //YOUR FIREBASE API CODE OBJECT
+});
+
+const auth = fireBaseApp.auth();  //FOR AUTH() 
+
+const db = fireBaseApp.firestore(); //FOR DATABSE ACCESS
+
+const storage = fireBaseApp.storage();  // FORE STORAGE 
+
+export { db, auth, storage };
+
+----------------------------------------

@@ -1,0 +1,92 @@
+***********BitBucket password ********
+
+GnvMQsAQKmCGyFNbSvsk
+
+
+
+///webgradient.com   ===For awesome gradients...
+
+
+<!----- setinterval function   ---------->
+
+
+
+console.log("java reload")
+
+var countele=document.getElementById("count")
+
+var countdown=countele.innerHTML
+
+var interval=setInterval(function(){
+
+countele.innerHTML=countdown>0?countdown-=1:0
+
+countele.style.fontSize=countdown*50+"px"
+console.log(countdown*50+"px")
+if(countdown<=0)
+ clearInterval(interval)
+}
+,1000)
+
+
+<!---- random color rgb ----->  //Functon
+
+
+bttn.onclick =function sum(){
+  change.style.backgroundColor="rgb("+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+","+Math.floor(Math.random()*255)+")"
+}
+
+
+<!------Http backend server------->
+
+function todolistformbackend(){
+
+    var http=  new XMLHttpRequest();
+  
+     http.onreadystatechange=function(){
+
+      if(this.readyState===4){
+       if(this.status===200){
+          console.log(JSON.parse(this.responseText))
+       }
+       else{
+        console.log("Response Failed")
+       }
+      }
+     }
+   
+    http.open('Get','https://jsonplaceholder.typicode.com/todos',true)
+     http.send();
+
+  }
+
+ todolistformbackend();
+
+
+**************************************
+if you want to make the Bootstrap in the right then use the ml-auto 
+in ul mr-auto
+
+
+
+
+***************Redux DevTool ******************
+
+
+window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+
+
+
+**********For Advanced DevTool *********
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+
+const store = createStore(
+  reducer, composeEnhancers(applyMiddleware(thunk))
+);
+
+
+
+
+
